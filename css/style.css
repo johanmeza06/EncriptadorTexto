@@ -1,0 +1,217 @@
+/** Paleta de colores **/
+:root {
+  --colorfondo: #e5e5e5;
+  --primario: #0a3871;
+  --grisClaro: #d8dfe8;
+  --grisOscuro: #495057;
+  --blanco: #ffffff;
+}
+
+/**  Generales  **/
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body {
+  background-color: var(--colorfondo);
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/**  Modificacion de logo  **/
+
+.contenedorLogo {
+  margin: 2rem 0 1rem 2rem;
+}
+.logo {
+  position: absolute;
+  width: 1rem;
+}
+section {
+  display: grid;
+  grid-template-rows: 2 repeat(1fr);
+  grid-template-columns: 2 repeat(1fr);
+  grid-template-areas:
+    "texto encriptador"
+    "botones encriptador";
+  place-items: center;
+}
+
+/**  Modificacion del texto a encriptar  **/
+
+.contenedorTexto {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  grid-area: texto;
+}
+.inputEncriptar {
+  width: 80%;
+  height: 8rem;
+  text-decoration: none;
+  resize: none;
+  border: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  color: var(--primario);
+  text-transform: lowercase;
+}
+.inputEncriptar:hover,
+.inputEncriptar:focus,
+.headingEncriptado:hover,
+.headingEncriptado:focus {
+  border: none;
+  text-shadow: none;
+  outline: none;
+}
+.inputEncriptar::placeholder {
+  color: var(--primario);
+}
+
+.contenedorTexto p {
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 0.2rem;
+}
+.signoExclamacion img {
+  width: 0.7rem;
+  vertical-align: middle;
+}
+
+/**  Modificacion del texto Encriptado  **/
+
+.contenedorEncriptado {
+  width: 60%;
+  min-height: 16rem;
+  padding: 1rem;
+  position: relative;
+  text-align: center;
+  background-color: var(--blanco);
+  border-radius: 1rem;
+  grid-area: encriptador;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.contenedorEncriptado h2,
+.contenedorEncriptado p {
+  text-align: center;
+}
+
+.contenedorEncriptado h2 {
+  font-size: 0.7rem;
+}
+.contenedorEncriptado p {
+  font-size: 0.4rem;
+}
+
+.muneco {
+  width: 4rem;
+  object-fit: cover;
+}
+
+.btnCopiar {
+  padding: 0.5rem 2.2rem;
+  text-align: center;
+  border: 0.5px solid var(--primario);
+  border-radius: 0.5rem;
+  font-size: 0.5rem;
+}
+
+/**  Modificacion de los botones  **/
+
+.contenedorBotones {
+  display: flex;
+  gap: 2rem;
+  grid-area: botones;
+}
+.btnDesencriptar {
+  padding: 0.5rem 2.2rem;
+  text-align: center;
+  border: 0.5px solid var(--primario);
+  border-radius: 0.5rem;
+  font-size: 0.5rem;
+  background-color: var(--grisClaro);
+}
+.btnEncriptar {
+  background-color: var(--primario);
+  padding: 0.5rem 2.2rem;
+  text-align: center;
+  border: 0.5px solid var(--primario);
+  border-radius: 0.5rem;
+  font-size: 0.5rem;
+  color: var(--blanco);
+}
+
+/**  Clases Activas **/
+
+.activa {
+  display: none;
+}
+
+.headingEncriptado {
+  font-size: 0.5rem;
+  color: var(--primario);
+  resize: none;
+  border: none;
+  width: 100%;
+  min-height: 10rem;
+}
+
+/** Media querys **/
+
+
+@media (min-width: 768px) {
+  /** area campo de texto  **/
+.contenedorTexto p {
+  font-size: 2rem;
+  gap: 1rem;
+}
+.signoExclamacion img {
+  width: 2rem;
+}
+.inputEncriptar {
+  font-size: 2rem;
+  height: 25rem;
+}
+/** area de Logo  **/
+.contenedorLogo {
+  margin: 0.5rem 0 1rem 2rem;
+}
+.contenedorLogo a img {
+  width: 2rem;
+}
+
+    /** area texto encriptado  **/
+.contenedorEncriptado {
+  height: 40rem;
+}
+.muneco {
+  width: 15rem;
+}
+.contenedorEncriptado h2 {
+  font-size: 1rem;
+}
+.contenedorEncriptado p {
+  font-size: 1rem;
+}
+.btnCopiar,
+.btnEncriptar,
+.btnDesencriptar{
+  padding: 1rem 5rem;
+  font-size: 1rem;
+  border-radius: 1.5rem;
+}
+.headingEncriptado{
+  font-size: 2rem;
+}
+}
