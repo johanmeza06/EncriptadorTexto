@@ -70,9 +70,6 @@ function desencriptarTexto(texto) {
   contenedorEncriptado.children[1].classList.add("activa");
   contenedorEncriptado.children[2].classList.add("activa");
   contenedorEncriptado.children[0].classList.add("activa");
-
-  console.log(textoDesencriptado)
-  console.log(mostrarTexto)
 }
 
 function copiar() {
